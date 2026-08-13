@@ -44,7 +44,7 @@ Grimoire is:
 4. rules for routing work context between them
 5. a small session-continuity protocol for closing and resuming work
 
-The canonical session instructions live in `prompts/`. Optional skills in `skills/` are derived convenience wrappers and should not define behavior independently.
+The canonical session instructions live in `prompts/`. The personal-Grimoire template includes optional Codex skills as derived convenience wrappers; they should not define behavior independently.
 
 ## Non-goals
 
@@ -61,12 +61,16 @@ Those capabilities may exist in tools that use Grimoire, but they are not part o
 
 ## Getting Started
 
-1. Clone or fork this repository.
-2. Copy `templates/personal-grimoire/` into a private repository of your own.
+1. Create a private repository for your personal Grimoire.
+2. Copy the contents of `templates/personal-grimoire/` into it, including the hidden `.agents/` directory.
 3. Add your projects to `projects.yaml`.
-4. Give your preferred AI or development tool access to that personal Grimoire.
-5. Tell it to read `GRIMOIRE.md` and follow the project map.
-6. Use `prompts/session-open.md` when resuming work and `prompts/session-close.md` before ending substantial work. Optional `/resume` and `/endsession` skills provide the same flow where supported.
+4. Give your AI or development tool access to that repository and the relevant project repositories.
+5. At the start of a task, give the tool the local path to your personal Grimoire and tell it to read `GRIMOIRE.md` and follow the project map.
+6. Use `prompts/session-open.md` when resuming work and `prompts/session-close.md` before ending substantial work. For Codex, run `scripts/install-codex-skills.ps1` once, then use `@resume` or `@endsession` in the desktop app (or `$resume` / `$endsession` in the CLI and IDE extension).
+
+`endsession` never guesses where to save an unassigned session: it asks which project should receive the activity record before writing anything.
+
+Fork this repository only when you want to contribute to or customize the shared conventions. Your personal Grimoire should normally be a separate private repository.
 
 See `docs/concepts.md`, `docs/workflow.md`, and `INSTALL.md` for the operating model and optional skill installation.
 

@@ -10,7 +10,7 @@ Before work:
 
 `architecture/` is canonical until deliberately changed. `activity/` is evidence, not canon. Surface contradictions rather than silently resolving them.
 
-Before ending substantial work, follow the canonical Grimoire `prompts/session-close.md` or its derived `/endsession` skill. Activity records use `activity/YYYY-MM-DD-<slug>.md` and `activity/SESSION-TEMPLATE.md`.
+Before ending substantial work, follow the canonical Grimoire `prompts/session-close.md` or its derived `endsession` skill. Activity records use `activity/YYYY-MM-DD-<slug>.md` and `activity/SESSION-TEMPLATE.md`.
 
 Propose architecture changes in activity; do not promote them automatically.
 

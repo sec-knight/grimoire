@@ -17,3 +17,9 @@ personal Grimoire
 Project-specific knowledge belongs in the project architecture repository rather than in this routing repository.
 
 This repository should remain small and portable. Its purpose is to identify where context lives and how the repositories relate to one another.
+
+## Session helpers
+
+`prompts/` contains the canonical session-open and session-close instructions. `.agents/skills/` contains optional Codex wrappers. Run `scripts/install-codex-skills.ps1` once to make those wrappers available from any local project repository.
+
+When starting a Codex task outside this repository, provide this repository's local path with the task. The `resume` skill uses that path to resolve the project route before it reads project context.

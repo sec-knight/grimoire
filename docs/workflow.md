@@ -9,7 +9,7 @@ Read:
 - `GRIMOIRE.md`
 - `projects.yaml`
 
-Resolve the requested project from the routing map. `prompts/session-open.md` (or the optional `/resume` skill) defines the bounded resume flow for a fresh session.
+Resolve the requested project from the routing map. `prompts/session-open.md` (or the optional `resume` skill) defines the bounded resume flow for a fresh session.
 
 ## 2. Follow the Project Route
 
@@ -37,7 +37,7 @@ No tool owns the project.
 
 ## 5. Close the Session
 
-Before ending substantial work, follow `prompts/session-close.md` or the optional `/endsession` skill.
+Before ending substantial work, follow `prompts/session-close.md` or the optional `endsession` skill. If the session was not routed to a project, the close flow asks the user to choose a project before it writes activity.
 
 The close flow:
 
