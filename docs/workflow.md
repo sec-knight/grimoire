@@ -9,19 +9,23 @@ Read:
 - `GRIMOIRE.md`
 - `projects.yaml`
 
-Resolve the requested project from the routing map.
+Resolve the requested project from the routing map. `prompts/session-open.md` (or the optional `/resume` skill) defines the bounded resume flow for a fresh session.
 
 ## 2. Follow the Project Route
 
 Open the project's architecture repository.
 
-Read the repository's local instructions and relevant architecture.
+Read the repository's local instructions and architecture first, then `activity/CURRENT.md` and the three most recent activity records by filename date.
+
+Architecture remains canonical until deliberately promoted. If newer activity contradicts it, surface the contradiction; do not silently let activity replace architecture.
 
 If implementation or content work is required, follow the optional source/content repository link.
 
 ## 3. Start or Continue Activity
 
 For substantial work, create or continue a record in the architecture repository's `activity/` area.
+
+Activity records are named `YYYY-MM-DD-<slug>.md`. If the same line of work already has a record on that date, continue that record rather than creating another.
 
 Activity should preserve enough context that another human or AI can continue later without relying on the original chat or workspace.
 
@@ -31,11 +35,20 @@ Work may happen in any compatible environment, including ChatGPT, Claude, Codex,
 
 No tool owns the project.
 
-## 5. Record the Result
+## 5. Close the Session
 
-Before ending a session, preserve useful outcomes in activity.
+Before ending substantial work, follow `prompts/session-close.md` or the optional `/endsession` skill.
 
-Capture important findings, changes, unresolved questions, and continuation context.
+The close flow:
+
+- writes or updates the activity record
+- records failures, findings, evidence, and unresolved questions
+- proposes possible architecture changes without promoting them
+- rewrites `activity/CURRENT.md`
+- commits the activity when Git is available
+- emits a continuation block for another session
+
+If the current tool cannot write to Git, it should output the complete activity record and replacement `CURRENT.md` so the user or another tool can commit them.
 
 Do not preserve exhaustive transcripts merely for completeness.
 
@@ -43,7 +56,7 @@ Do not preserve exhaustive transcripts merely for completeness.
 
 Periodically review accumulated activity.
 
-Promote durable conclusions into `architecture/`.
+Promote durable conclusions into `architecture/` deliberately. Keep architecture promotion separate from routine activity commits so Git history preserves the distinction.
 
 Git history records both the original activity and the later refinement.
 
@@ -54,13 +67,13 @@ Personal Grimoire
         ↓
 Project architecture
         ↓
-Relevant activity
+CURRENT.md + bounded recent activity
         ↓
 Optional source/content repository
         ↓
 Work
         ↓
-Activity update
+Session close + activity update
         ↓
-Periodic architecture refinement
+Deliberate architecture refinement
 ```
