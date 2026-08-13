@@ -42,10 +42,22 @@ Grimoire is:
 2. a template for a personal Grimoire
 3. a template for project architecture repositories
 4. rules for routing work context between them
+5. a small session-continuity protocol for closing and resuming work
 
-It is **not** an orchestrator, database, autonomous agent, project-management application, or model runtime.
+The canonical session instructions live in `prompts/`. Optional skills in `skills/` are derived convenience wrappers and should not define behavior independently.
 
-Any human or tool that can work with Git can participate.
+## Non-goals
+
+Grimoire v0.1 deliberately does **not** provide:
+
+- a CLI or required application
+- schema validation
+- task, ticket, or project-status fields
+- automation or orchestration
+- generated indexes or a search database
+- an autonomous agent or model runtime
+
+Those capabilities may exist in tools that use Grimoire, but they are not part of the protocol.
 
 ## Getting Started
 
@@ -54,8 +66,13 @@ Any human or tool that can work with Git can participate.
 3. Add your projects to `projects.yaml`.
 4. Give your preferred AI or development tool access to that personal Grimoire.
 5. Tell it to read `GRIMOIRE.md` and follow the project map.
+6. Use `prompts/session-open.md` when resuming work and `prompts/session-close.md` before ending substantial work. Optional `/resume` and `/endsession` skills provide the same flow where supported.
 
-See `docs/concepts.md` and `docs/workflow.md` for the operating model.
+See `docs/concepts.md`, `docs/workflow.md`, and `INSTALL.md` for the operating model and optional skill installation.
+
+## Tools without Git access
+
+Git is the durable layer, but every participating tool does not need direct Git access. A tool that can only produce text can still follow the protocol by outputting the complete activity record and replacement `activity/CURRENT.md`; the user or another Git-capable tool can commit those artifacts. The record is the artifact, not the environment that produced it.
 
 ## Core Principle
 
