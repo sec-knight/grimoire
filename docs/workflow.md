@@ -9,7 +9,7 @@ Read:
 - `GRIMOIRE.md`
 - `projects.yaml`
 
-Resolve the requested project from the routing map. `prompts/session-open.md` (or the optional `resume` skill) defines the bounded resume flow for a fresh session.
+Resolve the requested project from the routing map. For a cloud chat with GitHub access but no local filesystem, start with the personal Grimoire's root `CHAT.md`; its matching `prompts/chat-bootstrap.md` is the canonical public instruction. `prompts/session-open.md` (or the optional `resume` skill) defines the bounded resume flow for a fresh session.
 
 ## 2. Follow the Project Route
 

@@ -4,6 +4,8 @@ This repository is a Grimoire routing map. It contains no project knowledge and
 should stay small enough to read in full — or paste into a chat window that has
 no filesystem access.
 
+For a cloud chat reading this repository through GitHub, start with `CHAT.md`.
+
 ## How to use it
 
 1. Read `GRIMOIRE.md`.

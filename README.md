@@ -65,7 +65,7 @@ Those capabilities may exist in tools that use Grimoire, but they are not part o
 2. Copy the contents of `templates/personal-grimoire/` into it, including the hidden `.agents/` directory.
 3. Add your projects to `projects.yaml`.
 4. Give your AI or development tool access to that repository and the relevant project repositories.
-5. At the start of a task, give the tool the local path to your personal Grimoire and tell it to read `GRIMOIRE.md` and follow the project map.
+5. For a cloud chat with GitHub access, tell it to read your personal Grimoire repository starting with `CHAT.md`. For other tools, give it the local path and tell it to read `GRIMOIRE.md` and follow the project map.
 6. Use `prompts/session-open.md` when resuming work and `prompts/session-close.md` before ending substantial work. For Codex, run `scripts/install-codex-skills.ps1` once, then use `@resume` or `@endsession` in the desktop app (or `$resume` / `$endsession` in the CLI and IDE extension).
 
 `endsession` never guesses where to save an unassigned session: it asks which project should receive the activity record before writing anything.
@@ -73,6 +73,10 @@ Those capabilities may exist in tools that use Grimoire, but they are not part o
 Fork this repository only when you want to contribute to or customize the shared conventions. Your personal Grimoire should normally be a separate private repository.
 
 See `docs/concepts.md`, `docs/workflow.md`, and `INSTALL.md` for the operating model and optional skill installation.
+
+### GitHub-only chat example
+
+> Read `github.com/sec-knight/mygrimoire`, starting with `CHAT.md`, and use it as my personal Grimoire for this chat.
 
 ## Tools without Git access
 
