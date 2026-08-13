@@ -6,22 +6,24 @@ This repository contains the durable architecture and work activity for one proj
 
 `architecture/` contains the project's reconciled current understanding: intent, structure, important decisions, current state, and direction.
 
-Architecture is canonical only to the extent that it represents the best current understanding of the project.
+Architecture remains the canonical record until deliberately changed. If activity reveals that architecture may be stale or wrong, surface that contradiction for refinement rather than silently allowing activity to supersede it.
 
 ## Activity
 
 `activity/` contains work-session context and evidence: notes, experiments, partial ideas, failures, findings, and unresolved questions.
 
-Activity preserves continuity across chats, tools, devices, and work sessions. It is not canonical merely because it was recorded.
+Activity preserves continuity across chats, tools, devices, and work sessions. It is evidence, not canon.
+
+`activity/CURRENT.md` is a bounded pointer to the latest relevant session record, current state, next action, and approaches that should not be retried.
 
 ## Context Flow
 
 ```text
 architecture
-  -> relevant recent activity
+  -> CURRENT.md + bounded recent activity
   -> work session
   -> activity update
-  -> periodic refinement
+  -> deliberate refinement
   -> architecture
 ```
 
