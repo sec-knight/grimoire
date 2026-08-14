@@ -3,14 +3,14 @@ version: 0.1
 projects:
   game-one:
     name: Game One
-    architecture: git@github.com:YOUR-USER/game-one-architecture.git
-    source: git@github.com:YOUR-USER/game-one.git
+    architecture: https://github.com/YOUR-USER/game-one-architecture.git
+    source: https://github.com/YOUR-USER/game-one.git
 
   book:
     name: My Book
-    architecture: git@github.com:YOUR-USER/book-architecture.git
+    architecture: https://github.com/YOUR-USER/book-architecture.git
 
   website:
     name: My Website
-    architecture: git@github.com:YOUR-USER/website-architecture.git
-    source: git@github.com:YOUR-USER/website.git
+    architecture: https://github.com/YOUR-USER/website-architecture.git
+    source: https://github.com/YOUR-USER/website.git
