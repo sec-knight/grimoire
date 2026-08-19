@@ -78,6 +78,41 @@ See `docs/concepts.md`, `docs/workflow.md`, and `INSTALL.md` for the operating m
 
 > Read `github.com/sec-knight/mygrimoire`, starting with `CHAT.md`, and use it as my personal Grimoire for this chat.
 
+## How Resume Works
+
+A Grimoire resume is deliberately bounded. It should not load an entire project's history or guess which file is newest by intuition.
+
+The resume flow is:
+
+```text
+resolve project
+  ↓
+verify local repository freshness when applicable
+  ↓
+read project operating guidance + architecture
+  ↓
+read CURRENT.md + bounded recent activity
+  ↓
+report current state and next action
+  ↓
+stop for confirmation before work begins
+```
+
+When a tool is using a local checkout, it first checks that checkout against its configured upstream. A clean checkout that is only behind may be brought forward safely. A checkout with local work, divergent history, an unavailable upstream, or unverified freshness is reported instead of being rewritten automatically.
+
+A cloud tool reading the configured remote directly already sees the shared repository copy and does not need the local freshness step.
+
+Grimoire also assigns one authority to each kind of context:
+
+- `architecture/` owns durable intent, constraints, structure, and deliberately promoted design decisions.
+- `activity/CURRENT.md` owns current execution state and the single next action.
+- dated `activity/` records are evidence and history.
+- `AGENTS.md` / `FAMILIAR.md` explain how to interpret and operate the repository.
+
+This avoids two common failure modes: stale local checkouts and duplicated state pointers that disagree about what should happen next.
+
+**Know which artifact owns the truth, then make sure you are reading the current copy of it.**
+
 ## Tools without Git access
 
 Git is the durable layer, but every participating tool does not need direct Git access. A tool that can only produce text can still follow the protocol by outputting the complete activity record and replacement `activity/CURRENT.md`; the user or another Git-capable tool can commit those artifacts. The record is the artifact, not the environment that produced it.
