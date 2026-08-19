@@ -8,7 +8,14 @@ Before work:
 2. Read `activity/CURRENT.md`.
 3. Read the three most recent dated files in `activity/`.
 
-`architecture/` is canonical until deliberately changed. `activity/` is evidence, not canon. Surface contradictions rather than silently resolving them.
+Authority is split by information type:
+
+- `architecture/` is canonical for durable intent, constraints, structure, and deliberately promoted design decisions.
+- `activity/CURRENT.md` is authoritative for current execution state and the single next action.
+- dated `activity/` records are evidence and history.
+- this file and `FAMILIAR.md` define how to interpret and operate the repository; do not duplicate the active-work pointer here.
+
+Surface contradictions rather than silently resolving them.
 
 Before ending substantial work, follow the canonical Grimoire `prompts/session-close.md` or its derived `endsession` skill. Activity records use `activity/YYYY-MM-DD-<slug>.md` and `activity/SESSION-TEMPLATE.md`.
 
